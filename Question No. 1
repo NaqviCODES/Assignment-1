@@ -1,0 +1,51 @@
+#include <iostream>
+#include <iomanip> // for fixed and setprecision
+using namespace std;
+
+int main() {
+    double num1, num2;
+
+    cout << "Enter first number: ";
+    cin >> num1;
+
+    cout << "Enter second number: ";
+    cin >> num2;
+
+    cout << fixed << setprecision(3); // to show 3 digits after decimal
+
+    cout << "\n--- Using Floating Point Numbers ---" << endl;
+    cout << "Sum = " << num1 + num2 << endl;
+    cout << "Difference = " << num1 - num2 << endl;
+    cout << "Product = " << num1 * num2 << endl;
+
+    if (num2 != 0)
+        cout << "Quotient = " << num1 / num2 << endl;
+    else
+        cout << "Quotient = Cannot divide by zero!" << endl;
+
+    // Converting (casting) both numbers to integers
+    int int1 = static_cast<int>(num1);
+    int int2 = static_cast<int>(num2);
+
+    cout << "\n--- After Casting to Integers ---" << endl;
+    cout << "First number as int = " << int1 << endl;
+    cout << "Second number as int = " << int2 << endl;
+    cout << "Sum = " << int1 + int2 << endl;
+    cout << "Difference = " << int1 - int2 << endl;
+    cout << "Product = " << int1 * int2 << endl;
+
+    if (int2 != 0)
+        cout << "Quotient = " << int1 / int2 << endl;
+    else
+        cout << "Quotient = Cannot divide by zero!" << endl;
+
+    /* 
+       Note:
+       When we change (cast) floating point numbers to integers,
+       the decimal part is removed, not rounded.
+       This is why the results are slightly different 
+       compared to floating-point calculations.
+    */
+
+    return 0;
+}
